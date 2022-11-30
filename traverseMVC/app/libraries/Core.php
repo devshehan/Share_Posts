@@ -16,22 +16,27 @@
             $url = $this->getUrl();
 
             //check url pages exist
-            if(file_exists('../app/controller/' . ucwords($url[0]) . '.php')){
+            if(file_exists('../app/controllers/' . ucwords($url[0]) . '.php')){
                 $this->currentController = ucwords($url[0]);
+                unset($url[0]);     // unset the first value from the url array
             }
 
             //require the control
-            require_once('../app/controller' . $this->currentController . '.php');
+            require_once('../app/controllers/' . $this->currentController . '.php');
 
             //instatiate the class
             $this->currentController = new $this->currentController;
 
-            unset($url[0]);     // unset the first value from the url array
+
+            
             //check method in the url
-            if(method_exists($this->currentController, $url[1])){
-                $this->currentMethod = $url[1];
-                unset($url[1]);
+            if(isset($url[1])){
+                if(method_exists($this->currentController, $url[1])){
+                    $this->currentMethod = $url[1];
+                    unset($url[1]);
+                }
             }
+
 
             //get the parameters in the url
             $this->params = $url ? array_values($url) : [];
