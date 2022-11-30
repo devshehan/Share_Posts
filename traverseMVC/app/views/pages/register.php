@@ -7,9 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> <?php echo $data['title'] ?></h1>
-
-    
-    
+    <h3>register page</h3>
 </body>
 </html>
