@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule ^$ traverseMVC/public/ [L]
+    RewriteRule (.*) traverseMVC/public/$1 [L]
+</IfModule>
