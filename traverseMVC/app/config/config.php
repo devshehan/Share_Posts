@@ -9,6 +9,6 @@
     define('DB_NAME', 'shareposts');
 
 
-    // URLROOT
-    define('URLROOT', 'http://localhost/shareposts');
+    // // URLROOT
+    // define('URLROOT', 'http://localhost/shareposts');
 
